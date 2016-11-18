@@ -1,2 +1,2 @@
-# temperanote
+# temperanotes
 Musical Temperament Editor
