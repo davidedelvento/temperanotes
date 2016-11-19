@@ -8,4 +8,4 @@ Temperanotes is command line Musical Temperament Editor useful to transform temp
 At the moment I'm focusing on Well Temperaments from the late 1600s to the early 1700s and on timidity only, but I may expand to other eras and software later (and pull request will always be welcome)
 
 # Name and Logo
-Temperanotes name is 
+Temperanotes name is a [Portmanteau](https://en.wikipedia.org/wiki/Portmanteau) of [temperament](https://en.wikipedia.org/wiki/Musical_temperament) and [note](https://en.wikipedia.org/wiki/Musical_note) and the logo is an Italian [tongue in cheek](https://en.wikipedia.org/wiki/Tongue-in-cheek) since in Italian *temperare* (the act of creating a temperament) means more commonly sharpening a pencil.
