@@ -14,3 +14,13 @@ def test_two_octaves(idiot_temp):
     assert len(expected_freq) == 24                                                      # obvious, but making sure no simply bugs in test itself
     actual_freq = temperanotes.frequencies(temperament = idiot_temp, low = 1, high = 1)
     assert actual_freq == expected_freq
+
+def test_normal_octave(idiot_temp):
+    expected_freq = [440.0 * i for i in idiot_temp]
+    actual_freq = temperanotes.frequencies(temperament = idiot_temp, low = 0, high = 1)
+    assert actual_freq == expected_freq
+
+def test_lower_octave(idiot_temp):
+    expected_freq = [440.0 / 2 * i for i in idiot_temp]
+    actual_freq = temperanotes.frequencies(temperament = idiot_temp, low = 1, high = 0)
+    assert actual_freq == expected_freq
