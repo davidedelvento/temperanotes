@@ -1,5 +1,5 @@
 from __future__ import division
-import math
+from math import log, sqrt
 import argparse
 
 def frequencies(temperament, octaves_low, octaves_high, base_freq = 440.0):
@@ -15,7 +15,7 @@ def equal_temperament():
 
 def to_cents(temperament):
     a = temperament[0]
-    return [int(1200 * math.log(t / a, 2) + .5) for t in temperament]
+    return [int(1200 * log(t / a, 2) + .5) for t in temperament]
 
 def read_temperament(t):
     temp = []
@@ -26,7 +26,7 @@ def read_temperament(t):
             stuff = useful.split(",")
             temp.append(eval(stuff[0]))
             if len(stuff) > 1:
-                cents.append(eval(stuff[1]))
+                cents.append(int(eval(stuff[1]) + .5))
     return temp, cents
 
 if __name__ == "__main__":
