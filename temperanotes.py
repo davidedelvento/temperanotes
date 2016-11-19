@@ -18,8 +18,16 @@ def to_cents(temperament):
     return [int(1200 * math.log(t / a, 2) + .5) for t in temperament]
 
 def read_temperament(t):
+    temp = []
+    cents = []
     for line in t.splitlines(True):
-        print line,
+        useful = line.split("#")[0].strip()
+        if useful:
+            stuff = useful.split(",")
+            temp.append(eval(stuff[0]))
+            if len(stuff) > 1:
+                cents.append(eval(stuff[1]))
+    return temp, cents
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
