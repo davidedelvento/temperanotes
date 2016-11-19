@@ -1,5 +1,6 @@
 from __future__ import division
 import math
+import argparse
 
 def frequencies(temperament, octaves_low, octaves_high, base_freq = 440.0):
     freq = []
@@ -15,3 +16,19 @@ def equal_temperament():
 def to_cents(temperament):
     a = temperament[0]
     return [int(1200 * math.log(t / a, 2) + .5) for t in temperament]
+
+def read_temperament(t):
+    for line in t.splitlines(True):
+        print line,
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("temperament", type=argparse.FileType('r'),
+                                       help="""File with exactly 12 lines (not counting comment
+                                               lines, starting with #) specifying on each line
+                                               "frequency_ratio_[,_cent]" where both frequency
+                                               ratio and cent can be a python expression such
+                                               as math.sqrt(2) or 103. The cent value is optional
+                                               and will be rounded to the closest integer""")
+    args = parser.parse_args()
+    temp = read_temperament(args.temperament.read())
