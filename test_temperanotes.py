@@ -40,7 +40,7 @@ def test_equal_temp():
     actual = temperanotes.equal_temperament()
     assert actual == expected
 
-def test_cent():
+def test_cents():
     expected = [100 * i for i in range(12)]
-    actual = temperanotes.to_cent(temperanotes.equal_temperament())
+    actual = temperanotes.to_cents(temperanotes.equal_temperament())
     assert actual == expected
