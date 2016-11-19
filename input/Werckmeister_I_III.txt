@@ -1,3 +1,15 @@
 # source https://en.wikipedia.org/wiki/Werckmeister_temperament
 # The following is a list of 12 frequencies ratios for the chromatic scale of the chosen key
 # Optionally, after a comma, the corresponding value in cents can be specified, which will be used as a check
+1                              , 0
+256 / 243                      , 90
+64 * sqrt(2) / 81              , 192
+32 / 27                        , 294
+256 * (2 ** .25) / 243         , 392
+4 / 3                          , 498
+1024 / 729                     , 588
+8 * (8 ** .25) / 9             , 696
+128 / 81                       , 792
+1024 * (2 ** .25) / 729        , 888
+16 / 9                         , 996
+128 * (2 ** .25) / 81          , 1092
