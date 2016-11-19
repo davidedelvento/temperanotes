@@ -44,3 +44,24 @@ def test_cents():
     expected = [100 * i for i in range(12)]
     actual = temperanotes.to_cents(temperanotes.equal_temperament())
     assert actual == expected
+
+def test_read_temperament_nocents():
+    data = """#This is a comment
+              1
+              1.01 # this is another comment
+              1.2
+              1.3
+              1.4
+              # more comments
+              1.5
+              1.6
+              1.7
+              1.8
+              1.9
+              1.10
+              1.11
+              1.12"""
+    expected = [1, 1.01, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 1.10, 1.11, 1.12]
+    actual = temperanotes.read_temperament(data)
+    assert actual == expected
+
