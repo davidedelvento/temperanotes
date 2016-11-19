@@ -1,3 +1,4 @@
 # Temperanotes
-![Logo](https://rawgithub.com/davidedelvento/temperanotes/blob/master/logo.png)
+![Logo](https://github.com/davidedelvento/temperanotes/blob/master/logo.png)
+
 Musical Temperament Editor
