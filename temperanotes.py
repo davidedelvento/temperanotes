@@ -1,3 +1,5 @@
+from __future__ import division
+
 def frequencies(temperament, octaves_low, octaves_high, base_freq = 440.0):
     freq = []
     for octave in range(1, octaves_low + 1):
@@ -7,4 +9,4 @@ def frequencies(temperament, octaves_low, octaves_high, base_freq = 440.0):
     return freq
 
 def equal_temperament():
-    return [ 2 ** (i/12)  for i in range(12)]
+    return [ 2. ** (i/12)  for i in range(12)]
