@@ -36,7 +36,7 @@ def test_four_octaves(idiot_temp):
     assert actual_freq == expected_freq
 
 def test_equal_temp():
-    expected = [1, 2 ** (1/12), 2 ** (1/6), 2 ** (1/4), 2 ** (1/3), 2 ** (5/12), 2 ** (1/2), 2 ** (7/12), 2 ** (2/3), 2 ** (3/4), 2 ** (5/6), 2 ** (11/12)]
+    expected = [1., 2. ** (1./12), 2. ** (1./6), 2. ** (1./4), 2. ** (1./3), 2. ** (5./12), 2. ** (1./2), 2. ** (7./12), 2. ** (2./3), 2. ** (3./4), 2. ** (5./6), 2. ** (11./12)]
     actual = temperanotes.equal_temperament()
     assert actual == expected
 
