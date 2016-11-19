@@ -62,6 +62,6 @@ def test_read_temperament_nocents():
               1.11
               1.12"""
     expected = [1, 1.01, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 1.10, 1.11, 1.12]
-    actual = temperanotes.read_temperament(data)
+    actual, cents = temperanotes.read_temperament(data)
     assert actual == expected
-
+    assert len(cents) == 0
