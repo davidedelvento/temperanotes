@@ -94,17 +94,21 @@ def test_read_incorrect_temperaments():
     with pytest.raises(SystemExit):
         temperanotes.read_temperament(data)
 
-def test_read_incorrect_cents():
+def test_read_more_entries_cents():
     data = (5 * "1, 100\n" +
             2 * "2, 150, 200\n" +   # additional data
             5 * "7, 200\n")
     with pytest.raises(SystemExit):
         temperanotes.read_temperament(data)
+
+def test_read_incorrect_cents():
     data = (5 * "1, 100\n" +
             2 * "2,\n" +            # missing some cents (with comma)
             5 * "7, 200\n")
     with pytest.raises(SystemExit):
         temperanotes.read_temperament(data)
+
+def test_read_missing_cents():
     data = (5 * "1, 100\n" +
             2 * "2\n" +             # missing some cents (without comma)
             5 * "7, 200\n")
