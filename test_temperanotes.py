@@ -49,7 +49,6 @@ def test_read_temperament_nocents():
     data = """#This is a comment
               1
               1.01 # this is another comment
-              1.2
               1.3
               1.4
               # more comments
@@ -61,7 +60,7 @@ def test_read_temperament_nocents():
               1.10
               1.11
               1.12"""
-    expected = [1, 1.01, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 1.10, 1.11, 1.12]
+    expected = [1, 1.01, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 1.10, 1.11, 1.12]
     actual, cents = temperanotes.read_temperament(data)
     assert actual == expected
     assert len(cents) == 0
@@ -70,7 +69,6 @@ def test_read_temperament_withcents_and_math():
     data = """#This is a comment
               1, 100
               sqrt(2), 200 # this is another comment
-              1.2, 300
               1.3, 4 ** (1/3)   # 1.58 must round to 2
               2 ** 1/12, 500
               # more comments
@@ -78,14 +76,15 @@ def test_read_temperament_withcents_and_math():
               1.6, 700
               1.7, 900
               1.8, 1000
-              1.9, 2000
+              1.9, 2000  # comments can appear anywhere
               1.10, 3000
               1.11, 1
-              1.12, 7"""
-    expected = [1, 1.4142135623730951, 1.2, 1.3, 0.1666666666666666666666666, 1.5, 1.6, 1.7, 1.8, 1.9, 1.10, 1.11, 1.12]
+              1.12, 7
+              # comments at the end"""
+    expected = [1, 1.4142135623730951, 1.3, 0.1666666666666666666666666, 1.5, 1.6, 1.7, 1.8, 1.9, 1.10, 1.11, 1.12]
     actual, cents = temperanotes.read_temperament(data)
     assert actual == expected
-    assert cents == [100, 200, 300, 2, 500, 600, 700, 900, 1000, 2000, 3000, 1, 7]
+    assert cents == [100, 200, 2, 500, 600, 700, 900, 1000, 2000, 3000, 1, 7]
 
 def test_read_incorrect_temperaments():
     data = 11 * "1, 100\n"
