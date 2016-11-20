@@ -115,3 +115,14 @@ def test_read_missing_cents():
     with pytest.raises(SystemExit):
         temperanotes.read_temperament(data)
 
+def test_read_file_with_errors():
+    data = (5 * "1, 100\n" +
+            2 * "foo_bar, 200\n" +  # syntax error in frequencies
+            5 * "7, 700\n")
+    with pytest.raises(SystemExit):
+        temperanotes.read_temperament(data)
+    data = (5 * "1, 100\n" +
+            2 * "2, foo_bar\n" +    # syntax error in cents
+            5 * "7, 700\n")
+    with pytest.raises(SystemExit):
+        temperanotes.read_temperament(data)
