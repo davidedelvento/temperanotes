@@ -79,7 +79,7 @@ def read_temperament(t):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("temperament", type=argparse.FileType('r'),
-                                       help="Temperament file, see README.md for details"
+                                       help="Temperament file, see README.md for details")
     args = parser.parse_args()
     temp, cents = read_temperament(args.temperament.read())
     verify(temp, cents)
