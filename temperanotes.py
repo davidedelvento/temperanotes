@@ -1,6 +1,6 @@
 from __future__ import division
 from math import log, sqrt
-import argparse
+import argparse, sys
 
 def frequencies(temperament, octaves_low, octaves_high, base_freq = 440.0):
     freq = []
@@ -27,6 +27,10 @@ def read_temperament(t):
             temp.append(eval(stuff[0]))
             if len(stuff) > 1:
                 cents.append(int(eval(stuff[1]) + .5))
+    if len(temp) != 12:
+        print >> sys.stderr, "Temperament file must have 12 entries for the chromatic scale"
+        print >> sys.stderr, "     instead it has", len(temp)
+        sys.exit(1)
     return temp, cents
 
 if __name__ == "__main__":
