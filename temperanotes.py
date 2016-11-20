@@ -56,6 +56,11 @@ def read_temperament(t):
         print >> sys.stderr, "     instead it has", len(temp)
         must_exit = True
 
+    if len(cents) != 12 and len(cents) != 0:
+        print >> sys.stderr, "Temperament file must have 0 or 12 entries for the chromatic scale"
+        print >> sys.stderr, "     for the cents field. Instead it has", len(cents)
+        must_exit = True
+
     real_exceptions = [value for value in exceptions if value is not None]
     if len(real_exceptions) > 0:
         print >> sys.stderr, "Problems reading temperament file"
