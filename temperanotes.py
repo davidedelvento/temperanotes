@@ -83,4 +83,4 @@ if __name__ == "__main__":
                                                even from integer input. The cent value is optional
                                                and will be rounded to the closest integer""")
     args = parser.parse_args()
-    temp = read_temperament(args.temperament.read())
+    temp, cent = read_temperament(args.temperament.read())
