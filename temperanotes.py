@@ -20,16 +20,26 @@ def to_cents(temperament):
 def read_temperament(t):
     temp = []
     cents = []
+    must_exit = False
     for line in t.splitlines(True):
         useful = line.split("#")[0].strip()
         if useful:
             stuff = useful.split(",")
             temp.append(eval(stuff[0]))
-            if len(stuff) > 1:
+            if len(stuff) == 2:
                 cents.append(int(eval(stuff[1]) + .5))
+            elif len(stuff) > 2:
+                print >> sys.stderr, "Temperament file can not have more than 2 entries per line"
+                print >> sys.stderr, "     instead it has in line:"
+                print >> sys.stderr, line
+                must_exit = True
+
     if len(temp) != 12:
         print >> sys.stderr, "Temperament file must have 12 entries for the chromatic scale"
         print >> sys.stderr, "     instead it has", len(temp)
+        must_exit = True
+
+    if must_exit:
         sys.exit(1)
     return temp, cents
 
