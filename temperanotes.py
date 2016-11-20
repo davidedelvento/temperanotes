@@ -29,6 +29,12 @@ def myeval(x, integer=False):
         e = ex
     return r, e
 
+def verify(temp, cents):
+    computed_cents = to_cents(temp)
+    for i, c in enumerate(computed_cents):
+        if c != cents[i]:
+            print "Warning: cent different for", str(i) + "th element", c, "vs", cents[i]
+
 def read_temperament(t):
     temp = []
     cents = []
@@ -84,3 +90,4 @@ if __name__ == "__main__":
                                                and will be rounded to the closest integer""")
     args = parser.parse_args()
     temp, cents = read_temperament(args.temperament.read())
+    verify(temp, cents)

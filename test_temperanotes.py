@@ -126,3 +126,5 @@ def test_read_file_with_errors():
             5 * "7, 700\n")
     with pytest.raises(SystemExit):
         temperanotes.read_temperament(data)
+
+# not testing verify() since it's very simple
