@@ -79,15 +79,7 @@ def read_temperament(t):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("temperament", type=argparse.FileType('r'),
-                                       help="""File with exactly 12 lines (not counting comment
-                                               lines, starting with #) specifying on each line
-                                               "frequency_ratio_[,_cent]" where both frequency
-                                               ratio and cent can be a python expression such
-                                               as sqrt(2) or 103 or 2 ** (1/32). Note that sqrt
-                                               log are automatically imported from math, and that
-                                               floating point division is automatically performed
-                                               even from integer input. The cent value is optional
-                                               and will be rounded to the closest integer""")
+                                       help="Temperament file, see README.md for details"
     args = parser.parse_args()
     temp, cents = read_temperament(args.temperament.read())
     verify(temp, cents)
