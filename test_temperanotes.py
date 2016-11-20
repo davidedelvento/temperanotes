@@ -86,3 +86,11 @@ def test_read_temperament_withcents_and_math():
     actual, cents = temperanotes.read_temperament(data)
     assert actual == expected
     assert cents == [100, 200, 300, 2, 500, 600, 700, 900, 1000, 2000, 3000, 1, 7]
+
+def test_read_incorrect_temperaments():
+    data = 11 * "1, 100\n"
+    with pytest.raises(SystemExit):
+        temperanotes.read_temperament(data)
+    data = 13 * "1, 100\n"
+    with pytest.raises(SystemExit):
+        temperanotes.read_temperament(data)
