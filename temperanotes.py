@@ -17,17 +17,34 @@ def to_cents(temperament):
     a = temperament[0]
     return [int(1200 * log(t / a, 2) + .5) for t in temperament]
 
+def myeval(x, integer=False):
+    e = None
+    r = None
+    try:
+        if integer:
+            r = int(eval(x) + .5)
+        else:
+            r = eval(x)
+    except Exception as ex:
+        e = ex
+    return r, e
+
 def read_temperament(t):
     temp = []
     cents = []
+    exceptions = []
     must_exit = False
     for line in t.splitlines(True):
         useful = line.split("#")[0].strip()
         if useful:
             stuff = useful.split(",")
-            temp.append(eval(stuff[0]))
+            result, excp = myeval(stuff[0])
+            temp.append(result)
+            exceptions.append(excp)
             if len(stuff) == 2:
-                cents.append(int(eval(stuff[1]) + .5))
+                result, excp = myeval(stuff[1], integer=True)
+                cents.append(result)
+                exceptions.append(excp)
             elif len(stuff) > 2:
                 print >> sys.stderr, "Temperament file can not have more than 2 entries per line"
                 print >> sys.stderr, "     instead it has in line:"
@@ -39,6 +56,11 @@ def read_temperament(t):
         print >> sys.stderr, "     instead it has", len(temp)
         must_exit = True
 
+    real_exceptions = [value for value in exceptions if value is not None]
+    if len(real_exceptions) > 0:
+        print >> sys.stderr, "Problems reading temperament file"
+        print >> sys.stderr, real_exceptions
+        must_exit = True
     if must_exit:
         sys.exit(1)
     return temp, cents
