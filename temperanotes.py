@@ -24,8 +24,6 @@ def frequencies(temperament, octaves_low, octaves_high, base_freq = 440.0, key_f
     extra_notes_hi, o_h = extra_notes(octaves_high)
 
     freq = frequencies_raw(temperament, o_l, o_h, base_freq)
-    print octaves_low, o_l, extra_notes_lo
-    print octaves_high, o_h, extra_notes_hi
     return freq[12 - extra_notes_lo:len(freq) + extra_notes_hi - 12]
 
 def equal_temperament():
