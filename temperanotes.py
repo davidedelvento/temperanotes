@@ -99,3 +99,15 @@ if __name__ == "__main__":
     args = parser.parse_args()
     temp, cents = read_temperament(args.temperament.read())
     verify(temp, cents)
+
+    print "------------- trying to build a piano ---------------"
+    piano = frequencies(temp, octaves_low=4, octaves_high=3)
+    print "Number of key:", len(piano), "(should be 88)"
+    print piano
+    print "Index of the A-440", piano.index(440.)
+
+    print "------- trying to build a full MIDI keyboard --------"
+    midi = frequencies(temp, octaves_low=6, octaves_high=5)
+    print len(midi), "should be 128"
+    print midi
+    print "Index of the A-440", midi.index(440.), "(should be 69)"
