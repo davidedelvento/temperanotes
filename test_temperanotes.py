@@ -12,7 +12,7 @@ def test_one_octave_and_one_note_per_direction(idiot_temp):
     expected_freq_hi   = [440.0     * i for i in idiot_temp]
     expected_freq = [440.0 / 4 * idiot_temp[-1]] + expected_freq_lo + expected_freq_hi + [440.0 * 2]
     assert len(expected_freq) == 24 + 2                                                 # obvious, but making sure no simply bugs in test itself
-    actual_freq = temperanotes.frequencies(temperament = idiot_temp, octaves_low = 2 + 1./12, octaves_high = 2 + 1./12)
+    actual_freq = temperanotes.frequencies(temperament = idiot_temp, octaves_low = 1 + 1./12, octaves_high = 1 + 1./12)
     assert actual_freq == expected_freq
 
 def test_one_octave_and_half_per_direction(idiot_temp):
