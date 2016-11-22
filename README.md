@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/davidedelvento/temperanotes.svg?branch=master)](https://travis-ci.org/davidedelvento/temperanotes)
+
 # Temperanotes - Musical Temperament Editor
 ![Logo](https://github.com/davidedelvento/temperanotes/blob/master/logo.png)
 
