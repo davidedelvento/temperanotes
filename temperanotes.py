@@ -19,7 +19,7 @@ def extra_notes(octaves):
         extra_notes = 12
     return extra_notes, new_octaves
 
-def frequencies(temperament, octaves_low, octaves_high, base_freq = 440.0):
+def frequencies(temperament, octaves_low, octaves_high, base_freq = 440.0, key_freq = '7'):
     extra_notes_lo, o_l = extra_notes(octaves_low)
     extra_notes_hi, o_h = extra_notes(octaves_high)
 
