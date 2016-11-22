@@ -10,6 +10,12 @@ def frequencies_raw(temperament, octaves_low, octaves_high, base_freq = 440.0):
         freq += [(base_freq * 2 ** octave) * note for note in temperament]
     return freq
 
+def frequencies(temperament, octaves_low, octaves_high, base_freq = 440.0):
+    freq = frequencies_raw(temperament, int(octaves_low + .5), int(octaves_high+.5), base_freq)
+    start = int( (int(octaves_low  + 0.5) - octaves_low)  * 12)
+    stop  = int( (int(octaves_high + 0.5) - octaves_high) * 12)
+    return freq[start:len(freq) - stop]
+
 def equal_temperament():
     return [ 2. ** (i/12)  for i in range(12)]
 
