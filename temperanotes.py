@@ -2,7 +2,7 @@ from __future__ import division
 from math import log, sqrt
 import argparse, sys
 
-def frequencies_raw(temperament, octaves_low, octaves_high, base_freq = 440.0):
+def frequencies_raw(temperament, octaves_low, octaves_high, base_freq):
     freq = []
     for octave in range(1, octaves_low + 1):
         freq =  [(base_freq / 2 ** octave) * note for note in temperament] + freq
