@@ -26,7 +26,7 @@ def frequencies(temperament, octaves_low, octaves_high, base_freq = 440.0):
     freq = frequencies_raw(temperament, o_l, o_h, base_freq)
     print octaves_low, o_l, extra_notes_lo
     print octaves_high, o_h, extra_notes_hi
-    return freq[12 - extra_notes_lo:len(freq) + 12 - extra_notes_hi]
+    return freq[12 - extra_notes_lo:len(freq) + extra_notes_hi - 12]
 
 def equal_temperament():
     return [ 2. ** (i/12)  for i in range(12)]
