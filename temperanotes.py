@@ -26,8 +26,18 @@ def qfrequencies(temperament, octaves_low, octaves_high, base_freq = 440.0, key_
     freq = frequencies_raw(temperament, o_l, o_h, base_freq)
     return freq[12 - extra_notes_lo:len(freq) + extra_notes_hi - 12]
 
-def frequencies(temperament, notes_low, notes_high): #, key = 'C', base_freq = 440.0, key_freq = 'A'):
-    return []
+#def frequencies(temperament, notes_low, notes_high, key = 'C', base_freq = 440.0, key_freq = 'A'):
+def frequencies(temperament, notes_low, notes_high, base_freq = 440.0):
+    freq = []
+    for fullnote in range(notes_high):
+        octave, note = divmod(fullnote, 12)
+        freq.append((base_freq * 2 ** octave) * temperament[note])
+
+    for fullnote in range(notes_low):
+        octave, note = divmod(fullnote, 12)
+        freq.append((base_freq / 2 ** octave) * temperament[note])
+
+    return freq
 
 def equal_temperament():
     return [ 2. ** (i/12)  for i in range(12)]
