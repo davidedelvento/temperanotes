@@ -10,7 +10,7 @@ def idiot_temp():
 def test_one_octave_and_one_note(idiot_temp):
     expected_freq = [440.0     * i for i in idiot_temp] + [440.0 * 2]
     assert len(expected_freq) == 13                                                    # obvious, but making sure no simply bugs in test itself
-    actual_freq = temperanotes.frequencies(temperament = idiot_temp, notes_low = 0, notes_high = 13)
+    actual_freq = temperanotes.frequencies(temperament = idiot_temp, notes_low = 0, notes_high = 13, key = 'A', base_freq = 440.0, key_freq = 'A')
     assert actual_freq == expected_freq
 
 def test_one_octave_and_one_note_per_direction(idiot_temp):
@@ -18,7 +18,7 @@ def test_one_octave_and_one_note_per_direction(idiot_temp):
     expected_freq_hi   = [440.0     * i for i in idiot_temp]
     expected_freq = [440.0 / 4 * idiot_temp[-1]] + expected_freq_lo + expected_freq_hi + [440.0 * 2]
     assert len(expected_freq) == 24 + 2                                                 # obvious, but making sure no simply bugs in test itself
-    actual_freq = temperanotes.frequencies(temperament = idiot_temp, notes_low = 13, notes_high = 13)
+    actual_freq = temperanotes.frequencies(temperament = idiot_temp, notes_low = 13, notes_high = 13, key = 'A', base_freq = 440.0, key_freq = 'A')
     assert actual_freq == expected_freq
 
 def test_one_octave_and_half_per_direction(idiot_temp):
@@ -28,7 +28,7 @@ def test_one_octave_and_half_per_direction(idiot_temp):
     expected_freq_hihi = [440.0 * 2 * i for i in idiot_temp]
     expected_freq = expected_freq_lolo[6:] + expected_freq_lo + expected_freq_hi + expected_freq_hihi[:6]
     assert len(expected_freq) == 48 - 12                                                 # obvious, but making sure no simply bugs in test itself
-    actual_freq = temperanotes.frequencies(temperament = idiot_temp, notes_low = 18, notes_high = 18)
+    actual_freq = temperanotes.frequencies(temperament = idiot_temp, notes_low = 18, notes_high = 18, key = 'A', base_freq = 440.0, key_freq = 'A')
     assert actual_freq == expected_freq
 
 def test_two_octaves(idiot_temp):
@@ -36,17 +36,17 @@ def test_two_octaves(idiot_temp):
     expected_freq_hi = [440.0     * i for i in idiot_temp]
     expected_freq = expected_freq_lo + expected_freq_hi
     assert len(expected_freq) == 24                                                      # obvious, but making sure no simply bugs in test itself
-    actual_freq = temperanotes.frequencies(temperament = idiot_temp, notes_low = 12, notes_high = 12)
+    actual_freq = temperanotes.frequencies(temperament = idiot_temp, notes_low = 12, notes_high = 12, key = 'A', base_freq = 440.0, key_freq = 'A')
     assert actual_freq == expected_freq
 
 def test_normal_octave(idiot_temp):
     expected_freq = [440.0 * i for i in idiot_temp]
-    actual_freq = temperanotes.frequencies(temperament = idiot_temp, notes_low = 0, notes_high = 12)
+    actual_freq = temperanotes.frequencies(temperament = idiot_temp, notes_low = 0, notes_high = 12, key = 'A', base_freq = 440.0, key_freq = 'A')
     assert actual_freq == expected_freq
 
 def test_lower_octave(idiot_temp):
     expected_freq = [440.0 / 2 * i for i in idiot_temp]
-    actual_freq = temperanotes.frequencies(temperament = idiot_temp, notes_low = 12, notes_high = 0)
+    actual_freq = temperanotes.frequencies(temperament = idiot_temp, notes_low = 12, notes_high = 0, key = 'A', base_freq = 440.0, key_freq = 'A')
     assert actual_freq == expected_freq
 
 def test_four_octaves(idiot_temp):
@@ -56,7 +56,7 @@ def test_four_octaves(idiot_temp):
     expected_freq_hihi = [440.0 * 2 * i for i in idiot_temp]
     expected_freq = expected_freq_lolo + expected_freq_lo + expected_freq_hi + expected_freq_hihi
     assert len(expected_freq) == 48                                                      # obvious, but making sure no simply bugs in test itself
-    actual_freq = temperanotes.frequencies(temperament = idiot_temp, notes_low = 24, notes_high = 24)
+    actual_freq = temperanotes.frequencies(temperament = idiot_temp, notes_low = 24, notes_high = 24, key = 'A', base_freq = 440.0, key_freq = 'A')
     assert actual_freq == expected_freq
 
 def test_equal_temp():
