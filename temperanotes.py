@@ -2,7 +2,7 @@ from __future__ import division
 from math import log, sqrt
 import argparse, sys
 
-def frequencies_raw(temperament, octaves_low, octaves_high, base_freq):
+def qfrequencies_raw(temperament, octaves_low, octaves_high, base_freq):
     freq = []
     for octave in range(1, octaves_low + 1):
         freq =  [(base_freq / 2 ** octave) * note for note in temperament] + freq
@@ -10,7 +10,7 @@ def frequencies_raw(temperament, octaves_low, octaves_high, base_freq):
         freq += [(base_freq * 2 ** octave) * note for note in temperament]
     return freq
 
-def extra_notes(octaves):
+def qextra_notes(octaves):
     extra_notes = int( .01 + (octaves - int(octaves))  * 12)
     new_octaves = int(octaves)
     if extra_notes > 0:
@@ -19,12 +19,15 @@ def extra_notes(octaves):
         extra_notes = 12
     return extra_notes, new_octaves
 
-def frequencies(temperament, octaves_low, octaves_high, base_freq = 440.0, key_freq = '7'):
+def qfrequencies(temperament, octaves_low, octaves_high, base_freq = 440.0, key_freq = '7'):
     extra_notes_lo, o_l = extra_notes(octaves_low)
     extra_notes_hi, o_h = extra_notes(octaves_high)
 
     freq = frequencies_raw(temperament, o_l, o_h, base_freq)
     return freq[12 - extra_notes_lo:len(freq) + extra_notes_hi - 12]
+
+def frequencies(temperament, notes_low, notes_high): #, key = 'C', base_freq = 440.0, key_freq = 'A'):
+    return []
 
 def equal_temperament():
     return [ 2. ** (i/12)  for i in range(12)]
