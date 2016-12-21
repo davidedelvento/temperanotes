@@ -160,3 +160,10 @@ def test_read_file_with_errors():
         temperanotes.read_temperament(data)
 
 # not testing verify() since it's very simple
+
+def test_myeval():
+    raise Exception("Test not implemented yet")
+
+def test_extranotes():
+    raise Exception("Test not implemented yet")
+
