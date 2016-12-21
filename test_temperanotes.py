@@ -36,22 +36,16 @@ def test_two_octaves(idiot_temp):
     expected_freq_hi = [440.0     * i for i in idiot_temp]
     expected_freq = expected_freq_lo + expected_freq_hi
     assert len(expected_freq) == 24                                                      # obvious, but making sure no simply bugs in test itself
-    actual_freq = temperanotes.frequencies_raw(temperament = idiot_temp, notes_low = 12, notes_high = 12, base_freq = 440.0)
-    assert actual_freq == expected_freq
     actual_freq = temperanotes.frequencies(temperament = idiot_temp, notes_low = 12, notes_high = 12)
     assert actual_freq == expected_freq
 
 def test_normal_octave(idiot_temp):
     expected_freq = [440.0 * i for i in idiot_temp]
-    actual_freq = temperanotes.frequencies_raw(temperament = idiot_temp, notes_low = 0, notes_high = 12, base_freq = 440.0)
-    assert actual_freq == expected_freq
     actual_freq = temperanotes.frequencies(temperament = idiot_temp, notes_low = 0, notes_high = 12)
     assert actual_freq == expected_freq
 
 def test_lower_octave(idiot_temp):
     expected_freq = [440.0 / 2 * i for i in idiot_temp]
-    actual_freq = temperanotes.frequencies_raw(temperament = idiot_temp, notes_low = 12, notes_high = 0, base_freq = 440.0)
-    assert actual_freq == expected_freq
     actual_freq = temperanotes.frequencies(temperament = idiot_temp, notes_low = 12, notes_high = 0)
     assert actual_freq == expected_freq
 
@@ -62,8 +56,6 @@ def test_four_octaves(idiot_temp):
     expected_freq_hihi = [440.0 * 2 * i for i in idiot_temp]
     expected_freq = expected_freq_lolo + expected_freq_lo + expected_freq_hi + expected_freq_hihi
     assert len(expected_freq) == 48                                                      # obvious, but making sure no simply bugs in test itself
-    actual_freq = temperanotes.frequencies_raw(temperament = idiot_temp, notes_low = 24, notes_high = 24, base_freq = 440.0)
-    assert actual_freq == expected_freq
     actual_freq = temperanotes.frequencies(temperament = idiot_temp, notes_low = 24, notes_high = 24)
     assert actual_freq == expected_freq
 
