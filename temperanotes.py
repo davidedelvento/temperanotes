@@ -92,6 +92,15 @@ def read_temperament(t):
         sys.exit(1)
     return temp, cents
 
+def piano(temp):
+    piano = frequencies(temp, notes_low = 4*12, notes_high = 3*12 + 4)  # starts from A-440
+    return piano
+
+def midi(temp, key='C', key_freq='A', freq=440.):
+    midi = frequencies(temp, notes_low = 5*12 + 9, notes_high = 4*12 + 11,
+                       key=key, key_freq=key_freq, base_freq=freq)
+    return midi
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("temperament", type=argparse.FileType('r'),
@@ -101,13 +110,18 @@ if __name__ == "__main__":
     verify(temp, cents)
 
     print "------------- trying to build a piano ---------------"
-    piano = frequencies(temp, notes_low = 4*12, notes_high = 3*12 + 4)  # starts from A-440
-    print "Number of key:", len(piano), "(should be 88)"
-    print piano
-    print "Index of the A-440", piano.index(440.), "(should be the 49th key or index 48)"
+    p = piano(temp)
+    print "Number of key:", len(p), "(should be 88)"
+    print p
+    import bisect
+    index = bisect.bisect_left(p, 440.)
+    print "Index of the A-440", index, "(should be the 49th key or index 48)"
+    print "Value of index", index, "=", p[index]
 
     print "------- trying to build a full MIDI keyboard --------"
-    midi = frequencies(temp, notes_low = 5*12 + 9, notes_high = 4*12 + 11)
-    print len(midi), "should be 128"
-    print midi
-    print "Index of the A-440", midi.index(440.), "(should be 69)"
+    m = midi(temp)
+    print len(m), "should be 128"
+    print m
+    index = bisect.bisect_left(m, 440.)
+    print "Index of the A-440", index, "(should be 69)"
+    print "Value of index", index, "=", p[index]
