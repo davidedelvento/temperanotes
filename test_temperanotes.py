@@ -154,8 +154,8 @@ def test_read_file_with_errors():
 # not testing verify() since it's very simple
 
 def test_myeval():
-    raise Exception("Test not implemented yet")
+    raise NotImplementedError()
 
 def test_extranotes():
-    raise Exception("Test not implemented yet")
+    raise NotImplementedError()
 
