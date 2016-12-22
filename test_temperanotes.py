@@ -7,6 +7,16 @@ def idiot_temp():
     assert len(temp) == 12                                                         # need 12 notes for the chromatic scale
     return temp
 
+def test_normal_octave(idiot_temp):
+    expected_freq = [440.0 * i for i in idiot_temp]
+    actual_freq = temperanotes.frequencies(temperament = idiot_temp, notes_low = 0, notes_high = 12, key = 'A', base_freq = 440.0, key_freq = 'A')
+    assert actual_freq == expected_freq
+
+def test_lower_octave(idiot_temp):
+    expected_freq = [440.0 / 2 * i for i in idiot_temp]
+    actual_freq = temperanotes.frequencies(temperament = idiot_temp, notes_low = 12, notes_high = 0, key = 'A', base_freq = 440.0, key_freq = 'A')
+    assert actual_freq == expected_freq
+
 def test_one_octave_and_one_note(idiot_temp):
     expected_freq = [440.0     * i for i in idiot_temp] + [440.0 * 2]
     assert len(expected_freq) == 13                                                    # obvious, but making sure no simply bugs in test itself
@@ -37,16 +47,6 @@ def test_two_octaves(idiot_temp):
     expected_freq = expected_freq_lo + expected_freq_hi
     assert len(expected_freq) == 24                                                      # obvious, but making sure no simply bugs in test itself
     actual_freq = temperanotes.frequencies(temperament = idiot_temp, notes_low = 12, notes_high = 12, key = 'A', base_freq = 440.0, key_freq = 'A')
-    assert actual_freq == expected_freq
-
-def test_normal_octave(idiot_temp):
-    expected_freq = [440.0 * i for i in idiot_temp]
-    actual_freq = temperanotes.frequencies(temperament = idiot_temp, notes_low = 0, notes_high = 12, key = 'A', base_freq = 440.0, key_freq = 'A')
-    assert actual_freq == expected_freq
-
-def test_lower_octave(idiot_temp):
-    expected_freq = [440.0 / 2 * i for i in idiot_temp]
-    actual_freq = temperanotes.frequencies(temperament = idiot_temp, notes_low = 12, notes_high = 0, key = 'A', base_freq = 440.0, key_freq = 'A')
     assert actual_freq == expected_freq
 
 def test_four_octaves(idiot_temp):
