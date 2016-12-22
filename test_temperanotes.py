@@ -7,6 +7,10 @@ def idiot_temp():
     assert len(temp) == 12                                                         # need 12 notes for the chromatic scale
     return temp
 
+def test_note_names():
+    assert len(temperanotes.note_names_sharp) == 12
+    assert len(temperanotes.note_names_flat) == 12
+
 def test_normal_octave(idiot_temp):
     expected_freq = [440.0 * i for i in idiot_temp]
     actual_freq = temperanotes.frequencies(temperament = idiot_temp, notes_low = 0, notes_high = 12, key = 'A', base_freq = 440.0, key_freq = 'A')
