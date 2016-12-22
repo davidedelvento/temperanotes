@@ -5,6 +5,13 @@ import argparse, sys
 note_names_sharp = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#']
 note_names_flat  = ['A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab']
 
+def get_key_index(key):
+    if len(key) == 1:
+        key_index = note_names_sharp.index(key)
+    else:
+        raise NotImplementedError()
+
+
 def frequencies(temperament, notes_low, notes_high, key = 'C', base_freq = 440.0, key_freq = 'A'):
     if key != 'A' or key_freq != 'A':
         raise NotImplementedError()
