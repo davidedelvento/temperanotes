@@ -33,7 +33,7 @@ def test_normal_octave_in_C(idiot_temp):
     # when starting from C,
     # A is the 10th semitone of the chromatic scale, i.e. idiot_temp[9]
     expected_freq = [440.0 / idiot_temp[9] * i for i in idiot_temp]
-    actual_freq = temperanotes.frequencies(temperament = idiot_temp, notes_low = 0, notes_high = 12, key = 'C', base_freq = 440.0, key_freq = 'C')
+    actual_freq = temperanotes.frequencies(temperament = idiot_temp, notes_low = 0, notes_high = 12, key = 'C', base_freq = 440.0, key_freq = 'A')
     assert actual_freq == expected_freq
 
 def test_normal_octave(idiot_temp):
