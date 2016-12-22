@@ -17,12 +17,13 @@ def get_key_index(key):
 
 
 def frequencies(temperament, notes_low, notes_high, key = 'C', base_freq = 440.0, key_freq = 'A'):
-    if key != 'A' or key_freq != 'A':
-        raise NotImplementedError()
+    key_index     = get_key_index(key)
+    keyfreq_index = get_key_index(key_freq)
+    use_base_freq = base_freq / temperament[keyfreq_index - key_index]
     freq = []
     for fullnote in range(-notes_low, notes_high):
         octave, note = divmod(fullnote, 12)
-        freq.append((base_freq * 2 ** octave) * temperament[note])
+        freq.append((use_base_freq * 2 ** octave) * temperament[note])
     return freq
 
 def equal_temperament():
