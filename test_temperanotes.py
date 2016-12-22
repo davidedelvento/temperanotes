@@ -10,6 +10,13 @@ def idiot_temp():
 def test_note_names():
     assert len(temperanotes.note_names_sharp) == 12
     assert len(temperanotes.note_names_flat) == 12
+    for note in "ABCDEFG":
+        assert note in temperanotes.note_names_sharp
+        assert note in temperanotes.note_names_flat
+        note_accidental = note + "#"
+        assert note_accidental in temperanotes.note_names_sharp
+        note_accidental = note + "b"
+        assert note_accidental in temperanotes.note_names_flat
 
 def test_normal_octave(idiot_temp):
     expected_freq = [440.0 * i for i in idiot_temp]
