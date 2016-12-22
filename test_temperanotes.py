@@ -155,7 +155,3 @@ def test_read_file_with_errors():
 
 def test_myeval():
     raise NotImplementedError()
-
-def test_extranotes():
-    raise NotImplementedError()
-
