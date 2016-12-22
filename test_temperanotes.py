@@ -21,6 +21,14 @@ def test_note_names():
         if not note_accidental in exclude:
             assert note_accidental in temperanotes.note_names_flat
 
+def test_get_key_index():
+    assert temperanotes.get_key_index('A') == 0
+    assert temperanotes.get_key_index('C') == 3
+    assert temperanotes.get_key_index('F') == 8
+    assert temperanotes.get_key_index('F#') == 9
+    assert temperanotes.get_key_index('G#') == 11
+    assert temperanotes.get_key_index('Ab') == 11
+
 def test_normal_octave_in_C(idiot_temp):
     # when starting from C,
     # A is the 10th semitone of the chromatic scale, i.e. idiot_temp[9]
