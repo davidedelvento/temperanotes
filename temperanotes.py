@@ -2,8 +2,9 @@ from __future__ import division
 from math import log, sqrt
 import argparse, sys
 
-#def frequencies(temperament, notes_low, notes_high, key = 'C', base_freq = 440.0, key_freq = 'A'):
-def frequencies(temperament, notes_low, notes_high, base_freq = 440.0):
+def frequencies(temperament, notes_low, notes_high, key = 'C', base_freq = 440.0, key_freq = 'A'):
+    if key != 'A' or key_freq != 'A':
+        raise NotImplementedError()
     freq = []
     for fullnote in range(-notes_low, notes_high):
         octave, note = divmod(fullnote, 12)
