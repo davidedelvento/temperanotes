@@ -49,7 +49,7 @@ def verify(temp, cents):
     computed_cents = to_cents(temp)
     for i, c in enumerate(computed_cents):
         if c != cents[i]:
-            print "Warning: cent different for", str(i) + "th element", c, "vs", cents[i]
+            print >> sys.stderr, "Warning: cent different for", str(i) + "th element", c, "vs", cents[i]
 
 def read_temperament(t):
     temp = []
@@ -109,19 +109,4 @@ if __name__ == "__main__":
     temp, cents = read_temperament(args.temperament.read())
     verify(temp, cents)
 
-    print "------------- trying to build a piano ---------------"
-    p = piano(temp)
-    print "Number of key:", len(p), "(should be 88)"
-    print p
-    import bisect
-    index = bisect.bisect_left(p, 440.)
-    print "Index of the A-440", index, "(should be the 49th key or index 48)"
-    print "Value of index", index, "=", p[index]
-
-    print "------- trying to build a full MIDI keyboard --------"
-    m = midi(temp)
-    print len(m), "should be 128"
-    print m
-    index = bisect.bisect_left(m, 440.)
-    print "Index of the A-440", index, "(should be 69)"
-    print "Value of index", index, "=", p[index]
+    print midi(temp) # needs argparse to select other options

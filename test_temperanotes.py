@@ -1,5 +1,5 @@
 import temperanotes
-import pytest
+import pytest, bisect
 
 @pytest.fixture
 def idiot_temp():
@@ -182,3 +182,23 @@ def test_read_file_with_errors():
 
 # not testing verify() since it's very simple
 # not explicitly testing myeval() since it's implicitly tested in each read_temperament() invocation
+
+def test_equal_piano():
+    piano = temperanotes.piano(temperanotes.equal_temperament())
+    index = bisect.bisect_left(piano, 440.)
+    print "Index of the A-440", index, "(should be the 49th key or index 48)"
+    print "Value of index", index, "=", piano[index], "should be close to 440."
+
+    assert len(piano) == 88 # the piano has 88 keys
+    assert index == 48
+    assert piano[index] - 440. < 0.01
+
+def test_equal_midi():
+    midi = temperanotes.midi(temperanotes.equal_temperament())
+    index = bisect.bisect_left(midi, 440.)
+    print "Index of the A-440", index, "(should be 69)"
+    print "Value of index", index, "=", midi[index], "should be close to 440."
+
+    assert len(midi) == 128        # the midi spec's 128 notes (0 to 127)
+    assert index == 69
+    assert midi[index] - 440. < 0.01
