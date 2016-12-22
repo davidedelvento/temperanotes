@@ -9,7 +9,11 @@ def get_key_index(key):
     if len(key) == 1:
         key_index = note_names_sharp.index(key)
     else:
-        raise NotImplementedError()
+        if key in note_names_sharp:
+            key_index = note_names_sharp.index(key)
+        else:
+            key_index = note_names_flat.index(key)      # let it fail here, if a wrong note name was specified
+    return key_index
 
 
 def frequencies(temperament, notes_low, notes_high, key = 'C', base_freq = 440.0, key_freq = 'A'):
