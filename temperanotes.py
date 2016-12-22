@@ -86,13 +86,13 @@ if __name__ == "__main__":
     verify(temp, cents)
 
     print "------------- trying to build a piano ---------------"
-    piano = frequencies(temp, octaves_low = 4, octaves_high = 3 + 4./12)  # starts from A-440
+    piano = frequencies(temp, notes_low = 4*12, notes_high = 3*12 + 4)  # starts from A-440
     print "Number of key:", len(piano), "(should be 88)"
     print piano
     print "Index of the A-440", piano.index(440.), "(should be the 49th key or index 48)"
 
     print "------- trying to build a full MIDI keyboard --------"
-    midi = frequencies(temp, octaves_low = 5 + 9./12, octaves_high = 4 + 10./12)
+    midi = frequencies(temp, notes_low = 5*12 + 9, notes_high = 4*12 + 11)
     print len(midi), "should be 128"
     print midi
     print "Index of the A-440", midi.index(440.), "(should be 69)"
