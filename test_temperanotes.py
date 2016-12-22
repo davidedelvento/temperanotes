@@ -152,6 +152,4 @@ def test_read_file_with_errors():
         temperanotes.read_temperament(data)
 
 # not testing verify() since it's very simple
-
-def test_myeval():
-    raise NotImplementedError()
+# not explicitly testing myeval() since it's implicitly tested in each read_temperament() invocation
