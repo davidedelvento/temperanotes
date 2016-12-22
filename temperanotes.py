@@ -2,6 +2,9 @@ from __future__ import division
 from math import log, sqrt
 import argparse, sys
 
+note_names_sharp = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#']
+note_names_flat  = ['A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab']
+
 def frequencies(temperament, notes_low, notes_high, key = 'C', base_freq = 440.0, key_freq = 'A'):
     if key != 'A' or key_freq != 'A':
         raise NotImplementedError()
