@@ -97,7 +97,8 @@ def piano(temp):
     return piano
 
 def midi(temp, key='C', key_freq='A', freq=440.):
-    midi = frequencies(temp, notes_low = 5*12 + 9, notes_high = 4*12 + 11,
+    # midi specs say that note #60 is middle C, i.e. there are 60 notes lower than that
+    midi = frequencies(temp, notes_low = 5*12, notes_high = 5*12 + 8,
                        key=key, key_freq=key_freq, base_freq=freq)
     return midi
 
