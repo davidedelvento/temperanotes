@@ -93,7 +93,7 @@ def read_temperament(t):
     return temp, cents
 
 def piano(temp):
-    piano = frequencies(temp, notes_low = 4*12, notes_high = 3*12 + 4)  # starts from A-440
+    piano = frequencies(temp, notes_low = 3*12 + 3, notes_high = 4*12 + 1)  # starts from middle C
     return piano
 
 def midi(temp, key='C', key_freq='A', freq=440.):
