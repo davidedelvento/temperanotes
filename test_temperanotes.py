@@ -185,7 +185,7 @@ def test_read_file_with_errors():
 
 def test_equal_piano():
     piano = temperanotes.piano(temperanotes.equal_temperament())
-    index = bisect.bisect_left(piano, 440.)
+    index = bisect.bisect_left(piano, 440.) - 1
     print "Index of the A-440", index, "(should be the 49th key or index 48)"
     print "Value of index", index, "=", piano[index], "should be close to 440."
 
@@ -195,7 +195,7 @@ def test_equal_piano():
 
 def test_equal_midi():
     midi = temperanotes.midi(temperanotes.equal_temperament())
-    index = bisect.bisect_left(midi, 440.)
+    index = bisect.bisect_left(midi, 440.) - 1
     print "Index of the A-440", index, "(should be 69)"
     print "Value of index", index, "=", midi[index], "should be close to 440."
 
