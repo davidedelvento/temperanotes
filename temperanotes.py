@@ -106,8 +106,15 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("temperament", type=argparse.FileType('r'),
                                        help="Temperament file, see README.md for details")
+    parser.add_argument("-t", "--timidity", action="store_true", default = False,
+                                       help="Output in timidity format")
+
     args = parser.parse_args()
     temp, cents = read_temperament(args.temperament.read())
     verify(temp, cents)
 
-    print midi(temp) # needs argparse to select other options
+    if args.timidity:
+        for freq in midi(temp):
+            print int(freq * 1000)
+    else:
+        print midi(temp)
