@@ -104,14 +104,20 @@ def midi(temp, key='C', key_freq='A', freq=440.):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("temperament", type=argparse.FileType('r'),
-                                       help="Temperament file, see README.md for details")
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument("temperament", type=argparse.FileType('r'), nargs='?',
+                                      help="Temperament file, see README.md for details")
+    group.add_argument("-e", "--equal", action="store_true", default = False,
+                                       help="Ignore TEMPERAMENT, use ET-12 instead")
     parser.add_argument("-t", "--timidity", action="store_true", default = False,
                                        help="Output in timidity format")
 
     args = parser.parse_args()
-    temp, cents = read_temperament(args.temperament.read())
-    verify(temp, cents)
+    if args.equal:
+        temp = equal_temperament()
+    else:
+        temp, cents = read_temperament(args.temperament.read())
+        verify(temp, cents)
 
     if args.timidity:
         for freq in midi(temp):
