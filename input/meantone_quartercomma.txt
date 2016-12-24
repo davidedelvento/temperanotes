@@ -3,11 +3,15 @@
 # Optionally, after a comma, the corresponding value in cents can be specified, which will be used as a check
 
     the ratio of a lesser (chromatic) semitone is X = 5 7 / 4 : 16 ,   {\displaystyle X={5^{7/4}:16},\ } X={5^{{7/4}}:16},\
-    the ratio of most fifths is P = 5 1 / 4 .   {\displaystyle P={5^{1/4}}.\ } P = {5^{1/4}}. \
 
 # T = sqrt(5) / 2                ~ 1.118     # ratio of most whole tones
-# S = 8 / sqrt(sqrt(5 ** 5))   =
-    = 8 / (5 *  sqrt(sqrt(5)))   ~ 1.070     # ratio of the diatonic semitone (greater)
+# S = 8 / sqrt(sqrt(5 ** 5))     =
+#   = 8 / (5 *  sqrt(sqrt(5)))   ~ 1.070     # ratio of the diatonic semitone (greater)
+# P = S * T ** 3                 =
+#   = (8 / (5 *  sqrt(sqrt(5)))) *
+#   * (5 * sqrt(5) / 8)          =
+#   = sqrt(5) / sqrt(sqrt(5))    =
+#   = sqrt(sqrt(5))              ~ 1.495     # ratio of most fifths
 
 1                      , 0
 
@@ -23,15 +27,11 @@ E♭ 	T S 	1.1963 	310.3
 
 F♯ 	T 3 	1.3975 	579.5
 
-G 	P 	1.4953 	696.6
-G 	P 	1.4953 	696.6
-V 	sqrt(sqrt(5)) 	1,495... 	696,6
+sqrt(sqrt(5))          , 697
 
 G♯ 	P X 	1.5625 	772.6
 
-A 	P T 	1.6719 	889.7
-A 	P T 	1.6719 	889.7
-VI 	sqrt(sqrt(125)) / 2 1,6719... 	889,7
+sqrt(sqrt(125)) / 2    , 890    # P * T (fifth and a whole tone)
 
 B♭ 	P T S 	1.7889 	1006.8
 
