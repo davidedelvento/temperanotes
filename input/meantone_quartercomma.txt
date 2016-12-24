@@ -35,10 +35,5 @@ sqrt(sqrt(125)) / 2    , 890    # P * T (fifth and a whole tone)
 
 B♭ 	P T S 	1.7889 	1006.8
 
-B 	P T 2 	1.8692 	1082.9
-B 	P T 2 	1.8692 	1082.9
-VII 	5 * sqrt(sqrt(5)) / 4 	1,869... 	1082,9
-
-C' 	P T 2 S 	2.0000
-C' 	P T 2 S 	2.0000
-VIII 	2 	2 	1200
+5 * sqrt(sqrt(5)) / 4  , 1083   # P * T ** 2 (fifth and two whole tones)
+2                      , 1200   # octave
