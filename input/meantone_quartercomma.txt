@@ -32,9 +32,10 @@ sqrt(5) / 2            , 193   # T          = whole tone                        
 5 * sqrt(5) / 8        , 580   # T ** 3     = 3 whole tones                         =
                                #            = augmented forth
 sqrt(sqrt(5))          , 697   # P          = fifth
-
-G♯ 	P X 	1.5625 	772.6
-
+25 / 16                , 773   # P * X      = sqrt(sqrt(5)) * 5 * sqrt(sqrt(125)) / 16 =
+                               #            = 25 / 16                                  =
+                               #            = a fifth and a chromatic semitone         =
+                               #            = augmented fifth
 sqrt(sqrt(125)) / 2    , 890   # P * T      = fifth and a whole tone                =
                                #            = sixth
 4 * sqrt(5) / 5        , 1007  # P * T * S  = sqrt(sqrt(5)) * sqrt(5) * 8 / (2 * 5 *  sqrt(sqrt(5)))
