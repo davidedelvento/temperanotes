@@ -6,7 +6,9 @@
 
 # T = sqrt(5) / 2                ~ 1.118     # ratio of most whole tones
 # S = 8 / sqrt(sqrt(5 ** 5))     =
-#   = 8 / (5 *  sqrt(sqrt(5)))   ~ 1.070     # ratio of the diatonic semitone (greater)
+#   = 8 / (5 *  sqrt(sqrt(5)))   ~ 1.070     # ratio of the diatonic  semitone (greater)
+# X = 5 ** (7/4) / 16            =
+#   = 5 * sqrt(sqrt(125)) / 16   ~ 1.045     # ratio of the chromatic semitone (lesser)
 # P = S * T ** 3                 =
 #   = (8 / (5 *  sqrt(sqrt(5)))) *
 #   * (5 * sqrt(5) / 8)          =
@@ -14,9 +16,8 @@
 #   = sqrt(sqrt(5))              ~ 1.495     # ratio of most fifths
 
 1                      , 0      # (tonic)
-
-C♯ 	X 	1.0449 	76.0
-
+5 * sqrt(sqrt(125)) / 16, 76  # X          = chromatic semitone =
+                               #            = augmented first
 sqrt(5) / 2            , 193   # T          = whole tone                            =
                                #            = second
 4 * sqrt(sqrt(5)) / 5  , 310   # T * S      = sqrt(5) * 8 / (2 * 5 * sqrt(sqrt(5))) =
