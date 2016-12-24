@@ -17,24 +17,26 @@
 
 C♯ 	X 	1.0449 	76.0
 
-sqrt(5) / 2            , 193    # T (whole tone, second)
-4 * sqrt(sqrt(5)) / 5  , 310    # T * S  = sqrt(5) * 8 / (2 * 5 * sqrt(sqrt(5))) =
-                                #        = 4 * sqrt(sqrt(5)) / 5                 =
-                                #        = whole tone and diatonic semitone      =
-                                #        = minor third
-5/4                    , 386    # T ** 2 (two whole tones, major third)
-2 / sqrt(sqrt(5))      , 503    # S * T ** 2 = 5 * 8 / (4 * 5 *  sqrt(sqrt(5))) =
-#                                            = two whole tones and a diatonic semitone
-#                                            = forth
+sqrt(5) / 2            , 193   # T          = whole tone                            =
+                               #            = second
+4 * sqrt(sqrt(5)) / 5  , 310   # T * S      = sqrt(5) * 8 / (2 * 5 * sqrt(sqrt(5))) =
+                               #            = 4 * sqrt(sqrt(5)) / 5                 =
+                               #            = whole tone and diatonic semitone      =
+                               #            = minor third
+5/4                    , 386   # T ** 2     = two whole tones                       =
+                               #            = major third
+2 / sqrt(sqrt(5))      , 503   # S * T ** 2 = 5 * 8 / (4 * 5 *  sqrt(sqrt(5)))      =
+                               #            = 2 whole tones and 1 diatonic semitone =
+                               #            = forth
 5 * sqrt(5) / 8        , 580   # T ** 3 (three whole tones, augmented forth)
 sqrt(sqrt(5))          , 697   # P (fifth)
 
 G♯ 	P X 	1.5625 	772.6
 
-sqrt(sqrt(125)) / 2    , 890    # P * T (fifth and a whole tone, sixth)
-4 * sqrt(5) / 5        , 1007   # P * T * S = sqrt(sqrt(5)) * sqrt(5) * 8 / (2 * 5 *  sqrt(sqrt(5)))
+sqrt(sqrt(125)) / 2    , 890   # P * T (fifth and a whole tone, sixth)
+4 * sqrt(5) / 5        , 1007  # P * T * S = sqrt(sqrt(5)) * sqrt(5) * 8 / (2 * 5 *  sqrt(sqrt(5)))
 #                                           = 4 * sqrt(5) / 5
 #                                           = fifth and a whole tone and a diatonic semitone
 #                                           = diminished seventh
-5 * sqrt(sqrt(5)) / 4  , 1083   # P * T ** 2 (fifth and two whole tones, seventh)
-2                      , 1200   # octave
+5 * sqrt(sqrt(5)) / 4  , 1083  # P * T ** 2 (fifth and two whole tones, seventh)
+2                      , 1200  # octave
