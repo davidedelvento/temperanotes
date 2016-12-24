@@ -17,17 +17,17 @@
 
 C♯ 	X 	1.0449 	76.0
 
-sqrt(5) / 2            , 193    # T
+sqrt(5) / 2            , 193    # T (whole tone)
 
 E♭ 	T S 	1.1963 	310.3
 
-5/4                    , 386    # T ** 2
+5/4                    , 386    # T ** 2 (two whole tones)
 
 2 / sqrt(sqrt(5))      , 503    # S * T ** 2 = 5 * 8 / (4 * 5 *  sqrt(sqrt(5)))
 
 F♯ 	T 3 	1.3975 	579.5
 
-sqrt(sqrt(5))          , 697
+sqrt(sqrt(5))          , 697    # P (fifth)
 
 G♯ 	P X 	1.5625 	772.6
 
