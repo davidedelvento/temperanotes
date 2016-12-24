@@ -1,0 +1,45 @@
+# source https://en.wikipedia.org/wiki/Quarter-comma_meantone and https://it.wikipedia.org/wiki/Temperamento_mesotonico#La_scala_diatonica
+# The following is a list of 12 frequencies ratios for the chromatic scale of the chosen key
+# Optionally, after a comma, the corresponding value in cents can be specified, which will be used as a check
+
+# T = sqrt(5) / 2                ~ 1.118     # ratio of most whole tones
+# S = 8 / sqrt(sqrt(5 ** 5))     =
+#   = 8 / (5 *  sqrt(sqrt(5)))   ~ 1.070     # ratio of the diatonic  semitone (greater)
+# X = 5 ** (7/4) / 16            =
+#   = 5 * sqrt(sqrt(125)) / 16   ~ 1.045     # ratio of the chromatic semitone (lesser)
+# P = S * T ** 3                 =
+#   = (8 / (5 *  sqrt(sqrt(5)))) *
+#   * (5 * sqrt(5) / 8)          =
+#   = sqrt(5) / sqrt(sqrt(5))    =
+#   = sqrt(sqrt(5))              ~ 1.495     # ratio of most fifths
+
+1                       , 0    # (tonic)
+5 * sqrt(sqrt(125)) / 16, 76   # X          = chromatic semitone                                     =
+                               #            = augmented first
+sqrt(5) / 2             , 193  # T          = whole tone                                             =
+                               #            = second
+4 * sqrt(sqrt(5)) / 5   , 310  # T * S      = sqrt(5) * 8 / (2 * 5 * sqrt(sqrt(5)))                  =
+                               #            = 4 * sqrt(sqrt(5)) / 5                                  =
+                               #            = whole tone and diatonic semitone                       =
+                               #            = minor third
+5/4                     , 386  # T ** 2     = two whole tones                                        =
+                               #            = major third
+2 / sqrt(sqrt(5))       , 503  # S * T ** 2 = 5 * 8 / (4 * 5 *  sqrt(sqrt(5)))                       =
+                               #            = 2 whole tones and 1 diatonic semitone                  =
+                               #            = forth
+5 * sqrt(5) / 8         , 580  # T ** 3     = 3 whole tones                                          =
+                               #            = augmented forth
+sqrt(sqrt(5))           , 697  # P          = fifth
+25 / 16                 , 773  # P * X      = sqrt(sqrt(5)) * 5 * sqrt(sqrt(125)) / 16               =
+                               #            = 25 / 16                                                =
+                               #            = a fifth and a chromatic semitone                       =
+                               #            = augmented fifth
+sqrt(sqrt(125)) / 2     , 890  # P * T      = fifth and a whole tone                                 =
+                               #            = sixth
+4 * sqrt(5) / 5         , 1007 # P * T * S  = sqrt(sqrt(5)) * sqrt(5) * 8 / (2 * 5 *  sqrt(sqrt(5))) =
+                               #            = 4 * sqrt(5) / 5                                        =
+                               #            = fifth and a whole tone and a diatonic semitone         =
+                               #            = diminished seventh
+5 * sqrt(sqrt(5)) / 4   , 1083 # P * T ** 2 = fifth and two whole tones                              =
+                               #            = seventh
+# 2                     , 1200 # octave (automatically assumed by temperanotes)
