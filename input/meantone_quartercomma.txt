@@ -1,4 +1,4 @@
-# source https://en.wikipedia.org/wiki/Quarter-comma_meantone
+# source https://en.wikipedia.org/wiki/Quarter-comma_meantone and https://it.wikipedia.org/wiki/Temperamento_mesotonico#La_scala_diatonica
 # The following is a list of 12 frequencies ratios for the chromatic scale of the chosen key
 # Optionally, after a comma, the corresponding value in cents can be specified, which will be used as a check
 
@@ -11,34 +11,42 @@
 
 C 	1 	1.0000 	0.0
 C 	1 	1.0000 	0.0
+I 	1 	1 	0
 
 C♯ 	X 	1.0449 	76.0
 
 D 	T 	1.1180 	193.2
 D 	T 	1.1180 	193.2
+II      sqrt(5)/2 1.118 	193,1
 
 E♭ 	T S 	1.1963 	310.3
 
 E 	T 2 	1.2500 	386.3
 E 	T 2 	1.2500 	386.3
+III 	5/4  	1,25 	386,3
 
 F 	T 2 S 	1.3375 	503.4
 F 	T 2 S 	1.3375 	503.4
+IV 	2 * sqrt(sqrt(125)) / 5 1,337 	503,4
 
 F♯ 	T 3 	1.3975 	579.5
 
 G 	P 	1.4953 	696.6
 G 	P 	1.4953 	696.6
+V 	sqrt(sqrt(5)) 	1,495... 	696,6
 
 G♯ 	P X 	1.5625 	772.6
 
 A 	P T 	1.6719 	889.7
 A 	P T 	1.6719 	889.7
+VI 	sqrt(sqrt(125)) / 2 1,6719... 	889,7
 
 B♭ 	P T S 	1.7889 	1006.8
 
 B 	P T 2 	1.8692 	1082.9
 B 	P T 2 	1.8692 	1082.9
+VII 	5 * sqrt(sqrt(5)) / 4 	1,869... 	1082,9
 
 C' 	P T 2 S 	2.0000
 C' 	P T 2 S 	2.0000
+VIII 	2 	2 	1200
