@@ -13,24 +13,25 @@
 #   = sqrt(5) / sqrt(sqrt(5))    =
 #   = sqrt(sqrt(5))              ~ 1.495     # ratio of most fifths
 
-1                      , 0
+1                      , 0      # (tonic)
 
 C♯ 	X 	1.0449 	76.0
 
-sqrt(5) / 2            , 193    # T (whole tone)
+sqrt(5) / 2            , 193    # T (whole tone, second)
 
 E♭ 	T S 	1.1963 	310.3
 
-5/4                    , 386    # T ** 2 (two whole tones)
+5/4                    , 386    # T ** 2 (two whole tones, major third)
 
 2 / sqrt(sqrt(5))      , 503    # S * T ** 2 = 5 * 8 / (4 * 5 *  sqrt(sqrt(5))) =
 #                                            = two whole tones and a diatonic semitone
+#                                            = forth
 5 * sqrt(5) / 8        , 580   # T ** 3 (three whole tones, augmented forth)
 sqrt(sqrt(5))          , 697    # P (fifth)
 
 G♯ 	P X 	1.5625 	772.6
 
-sqrt(sqrt(125)) / 2    , 890    # P * T (fifth and a whole tone)
+sqrt(sqrt(125)) / 2    , 890    # P * T (fifth and a whole tone, sixth)
 4 * sqrt(5) / 5        , 1007   # P * T * S = sqrt(sqrt(5)) * sqrt(5) * 8 / (2 * 5 *  sqrt(sqrt(5)))
 #                                           = 4 * sqrt(5) / 5
 #                                           = fifth and a whole tone and a diatonic semitone
