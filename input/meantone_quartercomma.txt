@@ -2,8 +2,6 @@
 # The following is a list of 12 frequencies ratios for the chromatic scale of the chosen key
 # Optionally, after a comma, the corresponding value in cents can be specified, which will be used as a check
 
-    the ratio of a lesser (chromatic) semitone is X = 5 7 / 4 : 16 ,   {\displaystyle X={5^{7/4}:16},\ } X={5^{{7/4}}:16},\
-
 # T = sqrt(5) / 2                ~ 1.118     # ratio of most whole tones
 # S = 8 / sqrt(sqrt(5 ** 5))     =
 #   = 8 / (5 *  sqrt(sqrt(5)))   ~ 1.070     # ratio of the diatonic  semitone (greater)
@@ -44,4 +42,4 @@ sqrt(sqrt(125)) / 2    , 890   # P * T      = fifth and a whole tone            
                                #            = diminished seventh
 5 * sqrt(sqrt(5)) / 4  , 1083  # P * T ** 2 = fifth and two whole tones             =
                                #            = seventh
-2                      , 1200  # octave
+# 2                    , 1200  # octave (automatically assumed by temperanotes)
