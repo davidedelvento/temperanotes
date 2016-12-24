@@ -26,13 +26,35 @@ If present on one entry, the cent value must be present for all 12 entries. The 
 if `frequency_ratio` and `cent` do not agree, a warning is printed.
 
 # Usage
-Simply run something like
+Run something like
 
 ```
 python temperanotes.py input/Werckmeister_I_III.txt -t > Werckmeister_I_III.timidity
 ```
 
 to generate the timidity frequency file, which can be then used as argument file for the `--freq-table` option when invoking `timidity`.
+
+# Practical example
+
+Create the meantone quarter comma and equal temperaments in timidity format with:
+
+```
+python temperanotes.py input/meantone_quartercomma.txt -t > output/meantone_quartercomma.timidity
+python temperanotes.py  -te > output/equal.timidity
+```
+Then download an example song, e.g.
+[Bach's 2-part invention in F minor](http://www.mutopiaproject.org/ftp/BachJS/BWV780/bach-invention-09/bach-invention-09.mid)
+which is a good one to hear the difference between equal and meantone
+(when the latter is created for the C key, which was usually the case in Bach's time), and play it with timidity as follows:
+
+```
+timidity                                    -A 100 -T 60 bach-invention-09.mid
+timidity -Z meantone_quartercomma.timidity  -A 100 -T 60 bach-invention-09.mid
+```
+You may select a different volume (`-A 100`) or a different tempo (`-T 60`). The vast majority of scholars and performers use
+something around `60` as I'm doing here, but Glenn Gould played it as slow as `40` while Czerny recommends `116`, so
+make your own choice. You may also save to file (instead of playing) with either `-Ov -o output_file.ogg` or
+`-Ow -o output_file.wav`
 
 # Details
 At the moment I'm focusing on Meantone and Well Temperaments from the late 1600s to the early 1700s and on timidity only, but I may expand to other eras and software later (and pull request will always be welcome)
