@@ -18,11 +18,11 @@
 C♯ 	X 	1.0449 	76.0
 
 sqrt(5) / 2            , 193    # T (whole tone, second)
-
-E♭ 	T S 	1.1963 	310.3
-
+4 * sqrt(sqrt(5)) / 5  , 310    # T * S  = sqrt(5) * 8 / (2 * 5 * sqrt(sqrt(5))) =
+                                #        = 4 * sqrt(sqrt(5)) / 5                 =
+                                #        = whole tone and diatonic semitone      =
+                                #        = minor third
 5/4                    , 386    # T ** 2 (two whole tones, major third)
-
 2 / sqrt(sqrt(5))      , 503    # S * T ** 2 = 5 * 8 / (4 * 5 *  sqrt(sqrt(5))) =
 #                                            = two whole tones and a diatonic semitone
 #                                            = forth
