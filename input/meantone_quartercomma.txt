@@ -27,7 +27,7 @@ sqrt(5) / 2            , 193    # T (whole tone, second)
 #                                            = two whole tones and a diatonic semitone
 #                                            = forth
 5 * sqrt(5) / 8        , 580   # T ** 3 (three whole tones, augmented forth)
-sqrt(sqrt(5))          , 697    # P (fifth)
+sqrt(sqrt(5))          , 697   # P (fifth)
 
 G♯ 	P X 	1.5625 	772.6
 
@@ -35,5 +35,6 @@ sqrt(sqrt(125)) / 2    , 890    # P * T (fifth and a whole tone, sixth)
 4 * sqrt(5) / 5        , 1007   # P * T * S = sqrt(sqrt(5)) * sqrt(5) * 8 / (2 * 5 *  sqrt(sqrt(5)))
 #                                           = 4 * sqrt(5) / 5
 #                                           = fifth and a whole tone and a diatonic semitone
-5 * sqrt(sqrt(5)) / 4  , 1083   # P * T ** 2 (fifth and two whole tones)
+#                                           = diminished seventh
+5 * sqrt(sqrt(5)) / 4  , 1083   # P * T ** 2 (fifth and two whole tones, seventh)
 2                      , 1200   # octave
