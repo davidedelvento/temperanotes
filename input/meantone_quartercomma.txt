@@ -15,7 +15,7 @@
 
 1                       , 0    # (tonic)
 5 * sqrt(sqrt(125)) / 16, 76   # X          = chromatic semitone                                     =
-                               #            = augmented first
+                               #            = minor second
 sqrt(5) / 2             , 193  # T          = whole tone                                             =
                                #            = second
 4 * sqrt(sqrt(5)) / 5   , 310  # T * S      = sqrt(5) * 8 / (2 * 5 * sqrt(sqrt(5)))                  =
